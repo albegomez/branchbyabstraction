@@ -34,7 +34,7 @@ namespace BranchAbstraction.Presentation.Application
         /// <returns></returns>
         public IPersonsAplication CreatePersonApplication()
         {
-            IPersonsBussines oldPersonsBussines = new PersonsBussines();
+            IPersonsBussines oldPersonsBussines = new NewPersonsBussines();
             IPersonsAplication aplicationService = new PersonsAplication(oldPersonsBussines);
             return aplicationService;
         }

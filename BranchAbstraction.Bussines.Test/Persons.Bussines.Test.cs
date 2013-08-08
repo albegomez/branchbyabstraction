@@ -8,17 +8,31 @@ namespace BranchAbstraction.Bussines.Test
     [TestClass]
     public class Persons
     {
-        [TestMethod]
+         [TestCategory("Bussines"),TestMethod]
         public void ObtenerTodoslasPersonas()
         {
             List<Person> personas = new PersonsBussines().GetPersons();
             Assert.AreEqual("Ken", personas[0].FirstName);
 
         }
-        [TestMethod]
+        [TestCategory("Bussines"),TestMethod]
         public void ObtenerTodoslasPersonasVarones()
         {
             List<Person> personas = new PersonsBussines().GetPersonByPersonType("EM");
+            Assert.AreEqual("Ken", personas[0].FirstName);
+
+        }
+        [TestCategory("Bussines"), TestMethod]
+        public void ObtenerTodoslasPersonasNew()
+        {
+            List<Person> personas = new NewPersonsBussines().GetPersons();
+            Assert.AreEqual("Ken", personas[0].FirstName);
+
+        }
+        [TestCategory("Bussines"), TestMethod]
+        public void ObtenerTodoslasPersonasVaronesNew()
+        {
+            List<Person> personas = new NewPersonsBussines().GetPersonByPersonType("EM");
             Assert.AreEqual("Ken", personas[0].FirstName);
 
         }

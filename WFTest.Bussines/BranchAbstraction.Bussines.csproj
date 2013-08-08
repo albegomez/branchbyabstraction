@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bussines\NewPersons.Bussines.cs" />
     <Compile Include="Interfaces\IPersonsBussines.cs" />
     <Compile Include="Bussines\Persons.Bussines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

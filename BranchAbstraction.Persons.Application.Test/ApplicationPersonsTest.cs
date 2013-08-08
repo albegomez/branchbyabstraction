@@ -9,24 +9,46 @@ namespace BranchAbstraction.Persons.Application.Test
     [TestClass]
     public class ApplicationPersonsTest
     {
+        public static void inicialiceTest()
+        {
+            IPersonsBussines personsBussines = new NewPersonsBussines();
+            List<Person> personas = personsBussines.GetPersonByPersonType("EM");
+            var nombre = personas[0].FirstName;
+        }
         /// <summary>
         /// Testeamos el obtener todas las personas
         /// </summary>
-        [TestMethod]
-        public void Application_Persons_ObtenerTodoslasPersonasOld()
+       [TestCategory("Application"), TestMethod]
+        public void ObtenerTodoslasPersonasOld()
         {
             IPersonsBussines personsBussines = new PersonsBussines();
             List<Person> personas = personsBussines.GetPersons(); 
             Assert.AreEqual("Ken", personas[0].FirstName);
-
         }
 
-        [TestMethod]
-        public void Application_Persons_ObtenerTodoslasPersonasVaronesOld()
+       [TestCategory("Application"), TestMethod]
+        public void ObtenerTodoslasPersonasVaronesOld()
         {
             IPersonsBussines personsBussines = new PersonsBussines();
             List<Person> personas = personsBussines.GetPersonByPersonType("EM"); 
             Assert.AreEqual("Ken", personas[0].FirstName);
         }
+
+       [TestCategory("Application"), TestMethod]
+       public void ObtenerTodoslasPersonasNew()
+       {
+           IPersonsBussines personsBussines = new NewPersonsBussines();
+           List<Person> personas = personsBussines.GetPersons();
+           Assert.AreEqual("Ken", personas[0].FirstName);
+
+       }
+
+       [TestCategory("Application"), TestMethod]
+       public void ObtenerTodoslasPersonasVaronesNew()
+       {
+           IPersonsBussines personsBussines = new NewPersonsBussines();
+           List<Person> personas = personsBussines.GetPersonByPersonType("EM");
+           Assert.AreEqual("Ken", personas[0].FirstName);
+       }
     }
 }

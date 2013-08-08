@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationService\ApplicationCreator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BranchAbstraction.Persons.Domain\BranchAbstraction.Persons.Application.csproj">
+      <Project>{b0d481e6-7d82-4aaf-9088-68292d3ed01d}</Project>
+      <Name>BranchAbstraction.Persons.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WFTest.Bussines\BranchAbstraction.Bussines.csproj">
       <Project>{a077f401-fafd-486b-a5e9-d33e46be19f2}</Project>
       <Name>BranchAbstraction.Bussines</Name>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BranchAbstraction.Bussines;
 using BranchAbstraction.Data;
+using BranchAbstraction.Presentation.Application;
+using BranchAbstraction.Persons.Application;
 
 namespace BranchAbstraction.Presentation
 {
@@ -21,7 +23,8 @@ namespace BranchAbstraction.Presentation
 
         private void BotonCargaHombres_Click(object sender, EventArgs e)
         {
-            List<Person> personsEM = new PersonsBussines().GetPersonByPersonType("EM");
+            IPersonsAplication personAplication = ApplicationCreator.Instance.CreatePersonApplication();
+            List<Person> personsEM = personAplication.GetPersonByPersonType("EM"); 
             dataGridView1.DataSource = personsEM;           
 
         }
